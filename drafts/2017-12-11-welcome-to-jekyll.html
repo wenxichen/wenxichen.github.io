@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Inspirations from Worms and Interpretability from NIPS2017</title>
-  <meta name="description" content="NIPS2017 is my first time to the conference. I would like to share some thoughts and inspiration without going too much into the technical stuff. More specif...">
+  <title>Welcome to Jekyll!</title>
+  <meta name="description" content="A site for my technicle thoughts and ideas evolved around AI technology.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/inspirations/2017/12/24/nips-2017-inspirations.html">
+  <link rel="canonical" href="/drafts/2017-12-11-welcome-to-jekyll.html">
   <link rel="alternate" type="application/rss+xml" title="wenxi&#39;s blog" href="/feed.xml">
   
   
@@ -43,7 +43,7 @@
           
             
             
-            <a class="page-link" href="/2017-12-11-welcome-to-jekyll.html">Welcome to Jekyll!</a>
+            <a class="page-link" href="/drafts/2017-12-11-welcome-to-jekyll.html">Welcome to Jekyll!</a>
             
           
             
@@ -75,48 +75,29 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Inspirations from Worms and Interpretability from NIPS2017</h1>
+    <h1 class="post-title" itemprop="name headline">Welcome to Jekyll!</h1>
     <p class="post-meta">
-      <time datetime="2017-12-24T23:50:44-05:00" itemprop="datePublished">
+      <time datetime="2017-12-11T14:03:44-05:00" itemprop="datePublished">
         
-        Dec 24, 2017
+        Dec 11, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>NIPS2017 is my first time to the conference. I would like to share some thoughts and inspiration without going too much into the technical stuff. More specifically, my thoughts are mainly on the worm C. Elegans workshop and interpretability. Hopefully it would be useful for others’ research.</p>
+    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-<h1 id="on-c-elegans">On C. Elegans</h1>
-<p><a href="https://en.wikipedia.org/wiki/Caenorhabditis_elegans">C. Elegans</a> is a worm species. What’s special about it is that all of its neurons have been completely mapped out. So <a href="https://sites.google.com/site/wwnip2017/home">Workshop on Worm’s Neural Information Processing</a> tried to bridge between the neural science research on C. Elegans and machine learning. I personally had never heard about C. Elegans before the workshop. But the workshop turned out to be really interesting and inspiring. Below are some interesting points the great speakers came across that I found not entirely consistent with current popular design of machine learning models.</p>
+<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-<h6 id="sensory-layer-does-more-than-embedding">Sensory layer does more than embedding</h6>
-<p>Professor Netta Cohen from University of Leeds gave a talk about C. Elegans search for salt. She argued that the sensory layer in C. Elegans is adaptive to its experience. So the simple example is that if the worm is on salt, it will become less attracted to salt; if it is not around salt any more, it will become attracted by salt again. As a result, there may be recurrent computation between the internal sensory states. It seems this kind of research may be useful for the autonomous driving. Indeed, they did some experiment on pothole detection [1].</p>
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-<h6 id="activation-may-be-distributed-to-more-than-one-neurons">Activation may be distributed to more than one neurons</h6>
-<p>Dr. William R. Schafer gave a talk about effect of neuron removals on C. Elegans’ muscle control. They found that different types of mapping between neurons to the muscle movement. Some neuron is necessary to certain movement, while some other neurons are not individually necessary. It is not clear why the differences. However, I realize this is not inconsistent with MLP where the effect of removal of certain neuron on activation depends on the weight. Abstract of the paper on this topic can be found here [2]</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<h6 id="recurrent-structure-of-neurons">Recurrent structure of neurons</h6>
-
-<h6 id="holistic-design-in-biology">Holistic design in Biology</h6>
-
-<p>Interpretability:</p>
-
-<p>Representations:</p>
-
-<h1 id="references">References</h1>
-<ol>
-  <li>
-    <p>A C. elegans inspired robotic model for pothole detection [<a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnx3d25pcDIwMTd8Z3g6YTg4YzA5YTViMzRhMWNm">link</a>]</p>
-
-    <p>John Lones, Anthony G Cohn, Netta Cohen</p>
-  </li>
-  <li>
-    <p>Using network control principles to probe the structure and function of neuronal connectomes [<a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnx3d25pcDIwMTd8Z3g6ZTRjNGYzMTMxMWZlYzQ3">abstract</a>]</p>
-
-    <p>William R. Schafer, Gang Yan, et al.</p>
-  </li>
-</ol>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
 
   </div>
