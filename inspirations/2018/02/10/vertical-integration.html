@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Welcome to Jekyll!</title>
-  <meta name="description" content="A site for my technicle thoughts and ideas evolved around AI technology.">
+  <title>Thoughts on vertical integration</title>
+  <meta name="description" content="Imagine taking an airplane, one would not need to know how to build it before sitting comfortable in it. Similarly, a pilot need not to know how each part of...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/drafts/2017-12-11-welcome-to-jekyll.html">
+  <link rel="canonical" href="/inspirations/2018/02/10/vertical-integration.html">
   <link rel="alternate" type="application/rss+xml" title="wenxi&#39;s blog" href="/feed.xml">
   
   
@@ -75,30 +75,25 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Welcome to Jekyll!</h1>
+    <h1 class="post-title" itemprop="name headline">Thoughts on vertical integration</h1>
     <p class="post-meta">
-      <time datetime="2017-12-11T11:03:44-08:00" itemprop="datePublished">
+      <time datetime="2018-02-10T00:50:44-08:00" itemprop="datePublished">
         
-        Dec 11, 2017
+        Feb 10, 2018
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>Imagine taking an airplane, one would not need to know how to build it before sitting comfortable in it. Similarly, a pilot need not to know how each part of the plane works mechanically, a mechanic need not to know how each tool is created, and a software engineer need not to know the blueprint of his/her computer chips. Thus, for every complicate system there are different levels of abstraction. Each level is build on top of the previous one. Moreover, it seems to be easier to build level x+1 using level x rather than level x-1.</p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>However, one may argue that everything can be explained or constructed using only the very low level components (e.g., atom level), except that it is almost impossible for us to comprehend a holistic view using only the lower level components. By introducing higher level abstractions, we make communication of ideas and knowledge more efficiently. Essentially, we create embedding to reduce the computation cost for ourselves to think and imagine, and to reduce the bandwidth need for us to communicate. But, at the same time, such compression also introduce noise.</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>On the other hand, machines have perfect memory and potentially more computation power. So, is it possible that in future machine learning we can abandon the higher level abstractions? Obviously, current approaches still embrace the structure information and the idea of embedding and adding levels of abstraction (e.g., 100+ layer CONV Nets). But do we really need it? If we do so much computation and achieve optimization using genetic programming, why can’t we have a “vertical integration” of abstractions and learn everything at the atom level? In that case, we create less noise and higher accuracy.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>One note to myself is that structural information may not equal to high level of abstraction. For example, by processing an image using a 2D/3D array instead of a 1D array, we preserve information rather than introducing a higher level of abstraction.</p>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
-
+<p>(TODO: Need to write an example in CNN…)</p>
 
   </div>
 
