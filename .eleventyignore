@@ -1,0 +1,9 @@
+node_modules/
+_site/
+.git/
+inspirations/
+drafts/
+index.html
+about/index.html
+404.html
+

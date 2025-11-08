@@ -1,0 +1,22 @@
+{
+  "name": "wenxichen-blog",
+  "version": "1.0.0",
+  "description": "A modern blog powered by 11ty",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "dev": "eleventy --serve --watch"
+  },
+  "keywords": [
+    "blog",
+    "11ty",
+    "eleventy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.0"
+  }
+}
+
