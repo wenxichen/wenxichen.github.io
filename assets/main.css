@@ -483,6 +483,7 @@ figcaption {
 
 .post-content p {
   margin-bottom: var(--spacing-md);
+  text-indent: 2em; /* 段落首行缩进两个字符 */
 }
 
 .post-content ul,
