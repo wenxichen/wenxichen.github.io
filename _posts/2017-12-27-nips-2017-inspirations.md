@@ -4,6 +4,9 @@ date: 2017-12-27
 layout: post.njk
 permalink: /inspirations/2017/12/27/nips-2017-inspirations.html
 description: "NIPS2017 is my first time to the conference. I would like to share some thoughts and inspirations from the Workshop on Worm's Neural Information Processing."
+lang: en
+translation_key: nips-2017-inspirations
+original: true
 ---
 
 NIPS2017 is my first time to the conference. I would like to share some thoughts and inspirations from the [Workshop on Worm's Neural Information Processing](https://sites.google.com/site/wwnip2017/home). Hopefully it would be useful for others' research.

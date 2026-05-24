@@ -4,6 +4,9 @@ date: 2018-02-10
 layout: post.njk
 permalink: /inspirations/2018/02/10/vertical-integration.html
 description: "Imagine taking an airplane, one would not need to know how to build it before sitting comfortable in it. Similarly, a pilot need not to know how each part of..."
+lang: en
+translation_key: vertical-integration
+original: true
 ---
 
 Imagine taking an airplane, one would not need to know how to build it before sitting comfortable in it. Similarly, a pilot need not to know how each part of the plane works mechanically, a mechanic need not to know how each tool is created, and a software engineer need not to know the blueprint of his/her computer chips. Thus, for every complicate system there are different levels of abstraction. Each level is build on top of the previous one. Moreover, it seems to be easier to build level x+1 using level x rather than level x-1.

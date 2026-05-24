@@ -11,17 +11,17 @@ templateEngineOverride: njk
   <link href="{{ site.url }}/feed.xml" rel="self"/>
   <link href="{{ site.url }}"/>
   {%- if collections.posts.length > 0 %}
-  <updated>{{ collections.posts[0].date | dateToRfc822 }}</updated>
+  <updated>{{ collections.posts[0].date | dateToPacificRfc822 }}</updated>
   {%- endif %}
   <id>{{ site.url }}/</id>
   <author>
     <name>{{ site.title }}</name>
   </author>
-  {%- for post in collections.posts %}
+  {%- for post in collections.postsListed %}
   <entry>
     <title>{{ post.data.title | escape }}</title>
     <link href="{{ site.url }}{{ post.url }}"/>
-    <updated>{{ post.date | dateToRfc822 }}</updated>
+    <updated>{{ post.date | dateToPacificRfc822 }}</updated>
     <id>{{ site.url }}{{ post.url }}</id>
     <content type="html">
       <![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(site.url) }}]]>

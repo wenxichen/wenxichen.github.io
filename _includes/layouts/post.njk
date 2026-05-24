@@ -2,18 +2,50 @@
 layout: base.njk
 ---
 
-<article class="post">
+{%- set partner = collections.posts | findTranslation(translation_key, lang) -%}
+<article
+  class="post{% if partner %} post--bilingual{% endif %}"
+  {% if lang == 'zh' %}lang="zh-Hans"{% endif %}
+  {% if partner %}data-original-lang="{{ lang or 'en' }}" data-translation-lang="{{ partner.data.lang }}"{% endif %}
+>
   <header class="post-header">
-    <h1 class="post-title">{{ title }}</h1>
+    <h1
+      class="post-title"
+      {% if partner %}data-title-original="{{ title }}" data-title-translation="{{ partner.data.title }}"{% endif %}
+    >{{ title }}</h1>
     <p class="post-meta">
       <time datetime="{{ date | isoDate }}">
         {{ date | dateDisplay }}
       </time>
+      {%- if partner %}
+      <span
+        class="lang-state"
+        data-status-original="{% if lang == 'zh' %}Current: Original (中文){% else %}Current: Original (English){% endif %}"
+        data-status-translation="{% if partner.data.lang == 'zh' %}Current: Translation (中文){% else %}Current: Translation (English){% endif %}"
+      >
+        {% if lang == 'zh' %}Current: Original (中文){% else %}Current: Original (English){% endif %}
+      </span>
+      <button
+        type="button"
+        class="lang-toggle"
+        aria-pressed="false"
+        data-label-to-translation="{% if partner.data.lang == 'zh' %}Switch to Chinese translation{% else %}Switch to English translation{% endif %}"
+        data-label-to-original="{% if lang == 'zh' %}Switch back to original Chinese{% else %}Switch back to original English{% endif %}"
+      >
+        {% if partner.data.lang == 'zh' %}Switch to Chinese translation{% else %}Switch to English translation{% endif %}
+      </button>
+      {%- endif %}
     </p>
   </header>
 
-  <div class="post-content">
-    {{ content | safe }}
+  <div class="post-body">
+    <div class="post-content post-content--original" data-lang="original">
+      {{ content | safe }}
+    </div>
+    {%- if partner %}
+    <div class="post-content post-content--translation" data-lang="translation" hidden{% if partner.data.lang == 'zh' %} lang="zh-Hans"{% endif %}>
+      {{ partner.templateContent | safe }}
+    </div>
+    {%- endif %}
   </div>
 </article>
-

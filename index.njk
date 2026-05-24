@@ -8,9 +8,15 @@ description: "A site for my technical thoughts and ideas evolved around AI techn
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
-    {% for post in collections.posts %}
+    {% for post in collections.postsListed %}
     <li>
-      <span class="post-meta">{{ post.date | dateDisplay }}</span>
+      <span class="post-meta">
+        {{ post.date | dateDisplay }}
+        {%- set partner = collections.posts | findTranslation(post.data.translation_key, post.data.lang) -%}
+        {%- if partner %}
+        <span class="lang-badge" title="Translation available">中/EN</span>
+        {%- endif %}
+      </span>
       <h2>
         <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
       </h2>
