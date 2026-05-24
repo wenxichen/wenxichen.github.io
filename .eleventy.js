@@ -50,6 +50,18 @@ module.exports = function(eleventyConfig) {
     return d.toISOString().split("T")[0];
   });
 
+  eleventyConfig.addFilter("showUpdated", function(date, updated) {
+    if (!updated) return false;
+    const toDay = (value) => new Date(value).toISOString().split("T")[0];
+    return toDay(updated) !== toDay(date);
+  });
+
+  eleventyConfig.addFilter("postUpdatedAt", function(date, updated) {
+    if (!updated) return date;
+    const toDay = (value) => new Date(value).toISOString().split("T")[0];
+    return toDay(updated) !== toDay(date) ? updated : date;
+  });
+
   eleventyConfig.addFilter("dateToPacificRfc822", function(date) {
     const d = dateOnlyAtPacificMidnight(date);
     const parts = new Intl.DateTimeFormat("en-US", {

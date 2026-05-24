@@ -48,6 +48,8 @@ lang: en
 Your post content here in Markdown format...
 ```
 
+Optional `updated` is the last revised date. When it differs from `date`, the post page and homepage show both published and updated dates.
+
 ### Bilingual Posts (English / 中文)
 
 Write the original post normally, then add a translation source file. Both languages appear on **one page** — the original is shown by default, and readers can toggle to the translation.

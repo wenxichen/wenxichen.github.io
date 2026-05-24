@@ -14,9 +14,14 @@ layout: base.njk
       {% if partner %}data-title-original="{{ title }}" data-title-translation="{{ partner.data.title }}"{% endif %}
     >{{ title }}</h1>
     <p class="post-meta">
-      <time datetime="{{ date | isoDate }}">
-        {{ date | dateDisplay }}
+      <time class="post-date" datetime="{{ date | isoDate }}">
+        {%- if date | showUpdated(updated) %}Published {{ date | dateDisplay }}{%- else %}{{ date | dateDisplay }}{%- endif %}
       </time>
+      {%- if date | showUpdated(updated) %}
+      <span class="post-updated">
+        Updated <time datetime="{{ updated | isoDate }}">{{ updated | dateDisplay }}</time>
+      </span>
+      {%- endif %}
       {%- if partner %}
       <span
         class="lang-state"

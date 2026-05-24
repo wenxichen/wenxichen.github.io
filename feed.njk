@@ -10,8 +10,8 @@ templateEngineOverride: njk
   <subtitle>{{ site.description }}</subtitle>
   <link href="{{ site.url }}/feed.xml" rel="self"/>
   <link href="{{ site.url }}"/>
-  {%- if collections.posts.length > 0 %}
-  <updated>{{ collections.posts[0].date | dateToPacificRfc822 }}</updated>
+  {%- if collections.postsListed.length > 0 %}
+  <updated>{{ collections.postsListed[0].data.date | postUpdatedAt(collections.postsListed[0].data.updated) | dateToPacificRfc822 }}</updated>
   {%- endif %}
   <id>{{ site.url }}/</id>
   <author>
@@ -21,7 +21,7 @@ templateEngineOverride: njk
   <entry>
     <title>{{ post.data.title | escape }}</title>
     <link href="{{ site.url }}{{ post.url }}"/>
-    <updated>{{ post.date | dateToPacificRfc822 }}</updated>
+    <updated>{{ post.data.date | postUpdatedAt(post.data.updated) | dateToPacificRfc822 }}</updated>
     <id>{{ site.url }}{{ post.url }}</id>
     <content type="html">
       <![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(site.url) }}]]>

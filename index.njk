@@ -11,7 +11,12 @@ description: "A site for my technical thoughts and ideas evolved around AI techn
     {% for post in collections.postsListed %}
     <li>
       <span class="post-meta">
-        {{ post.date | dateDisplay }}
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | dateDisplay }}</time>
+        {%- if post.data.date | showUpdated(post.data.updated) %}
+        <span class="post-updated">
+          · Updated <time datetime="{{ post.data.updated | isoDate }}">{{ post.data.updated | dateDisplay }}</time>
+        </span>
+        {%- endif %}
         {%- set partner = collections.posts | findTranslation(post.data.translation_key, post.data.lang) -%}
         {%- if partner %}
         <span class="lang-badge" title="Translation available">中/EN</span>
