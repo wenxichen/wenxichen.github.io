@@ -50,6 +50,22 @@ Your post content here in Markdown format...
 
 Optional `updated` is the last revised date. When it differs from `date`, the post page and homepage show both published and updated dates.
 
+### Disabling comments on a post
+
+Comments (powered by [giscus](https://giscus.app), backed by GitHub Discussions) are enabled by default on every post. To turn them off for a specific post, add `comments: false` to its front matter:
+
+```markdown
+---
+title: "Your Post Title"
+date: 2024-01-01
+layout: post.njk
+permalink: /your-post-url.html
+comments: false
+---
+```
+
+Bilingual posts share a single discussion thread (keyed by `translation_key`), so the EN and ZH versions of the same post show the same comments.
+
 ### Bilingual Posts (English / 中文)
 
 Write the original post normally, then add a translation source file. Both languages appear on **one page** — the original is shown by default, and readers can toggle to the translation.
@@ -109,10 +125,22 @@ translation_key: your-post-slug
 - ✅ Modern static site generator (11ty)
 - ✅ Markdown-based posts
 - ✅ Bilingual posts (English / 中文) with inline toggle on the same page
+- ✅ Comments via [giscus](https://giscus.app) (GitHub Discussions)
 - ✅ Responsive design
 - ✅ Dark mode support
 - ✅ Fast build times
 - ✅ Easy to maintain
+
+## Comments
+
+Comments are powered by [giscus](https://giscus.app), which stores comments in this repo's GitHub Discussions. To activate comments after cloning or forking:
+
+1. Enable **Discussions** in the repo settings.
+2. Install the [giscus GitHub App](https://github.com/apps/giscus) on the repo.
+3. Visit [giscus.app](https://giscus.app), enter the repo, choose pathname mapping, and pick (or create) a Discussion category of type **Announcement** (the default `Announcements` category works fine).
+4. Copy the generated `data-repo-id` and `data-category-id` into the `giscus` block of [`_data/site.json`](_data/site.json).
+
+Per-post opt-out is documented above under "Disabling comments on a post".
 
 ## Deployment
 

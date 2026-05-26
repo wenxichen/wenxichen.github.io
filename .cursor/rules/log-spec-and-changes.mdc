@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+
+For non-trivial change, please do the following: 
+1. the plan/spec to .agents/specs/
+2. log change logs under the same feature name in change-logs/
+3. add to appendices/ if needed

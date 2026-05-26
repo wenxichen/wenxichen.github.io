@@ -1,6 +1,19 @@
 {
   "title": "Wenxi's Blog",
   "description": "A site for my technical thoughts and ideas evolved around AI technology.",
-  "url": "https://wenxichen.github.io"
+  "url": "https://wenxichen.github.io",
+  "giscus": {
+    "repo": "wenxichen/wenxichen.github.io",
+    "repoId": "MDEwOlJlcG9zaXRvcnkxMDM3MDAwODg=",
+    "category": "Announcements",
+    "categoryId": "DIC_kwDOBi5WeM4C92RO",
+    "mapping": "pathname",
+    "strict": "0",
+    "reactionsEnabled": "1",
+    "emitMetadata": "0",
+    "inputPosition": "bottom",
+    "theme": "preferred_color_scheme",
+    "lang": "en",
+    "loading": "lazy"
+  }
 }
-

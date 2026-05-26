@@ -571,6 +571,33 @@ figcaption {
 }
 
 /**
+ * Comments (giscus)
+ */
+.post-comments {
+  max-width: var(--max-width);
+  margin: var(--spacing-xl) auto 0;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.post-comments-heading {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.post-comments .giscus,
+.post-comments .giscus-frame {
+  width: 100%;
+}
+
+.post-comments .giscus-frame {
+  border: 0;
+  color-scheme: normal;
+}
+
+/**
  * Site Footer
  */
 .site-footer {
