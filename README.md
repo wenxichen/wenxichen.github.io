@@ -107,6 +107,28 @@ translation_key: your-post-slug
 - The original is shown by default; a toggle button switches to the translation on the same page
 - Translation files can live alongside originals in `_posts/` (e.g. `my-post-zh.md`)
 
+## Linking Substack Posts
+
+Posts published on [wenxichen.substack.com](https://wenxichen.substack.com/)
+are surfaced on the home page (and in `/feed.xml`) inline with native blog
+posts, sorted by date, and marked with a `Substack` badge. The title links
+out to the canonical Substack URL.
+
+To add a new Substack post, prepend an entry to
+[`_data/substack.json`](_data/substack.json):
+
+```json
+{
+  "title": "Post title as it appears on Substack",
+  "url": "https://wenxichen.substack.com/p/post-slug",
+  "date": "YYYY-MM-DD",
+  "description": "Short summary used as feed <summary>."
+}
+```
+
+The merge + sort happens in the `combinedFeed` Nunjucks filter in
+`.eleventy.js`.
+
 ## Project Structure
 
 ```

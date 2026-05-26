@@ -10,24 +10,40 @@ templateEngineOverride: njk
   <subtitle>{{ site.description }}</subtitle>
   <link href="{{ site.url }}/feed.xml" rel="self"/>
   <link href="{{ site.url }}"/>
-  {%- if collections.postsListed.length > 0 %}
-  <updated>{{ collections.postsListed[0].data.date | postUpdatedAt(collections.postsListed[0].data.updated) | dateToPacificRfc822 }}</updated>
+  {%- set feedItems = collections.postsListed | combinedFeed(substack) %}
+  {%- if feedItems.length > 0 %}
+    {%- set newest = feedItems[0] %}
+    {%- if newest.type == "post" %}
+  <updated>{{ newest.post.data.date | postUpdatedAt(newest.post.data.updated) | dateToPacificRfc822 }}</updated>
+    {%- else %}
+  <updated>{{ newest.date | dateToPacificRfc822 }}</updated>
+    {%- endif %}
   {%- endif %}
   <id>{{ site.url }}/</id>
   <author>
     <name>{{ site.title }}</name>
   </author>
-  {%- for post in collections.postsListed %}
+  {%- for item in feedItems %}
   <entry>
-    <title>{{ post.data.title | escape }}</title>
-    <link href="{{ site.url }}{{ post.url }}"/>
-    <updated>{{ post.data.date | postUpdatedAt(post.data.updated) | dateToPacificRfc822 }}</updated>
-    <id>{{ site.url }}{{ post.url }}</id>
+    <title>{{ item.title | escape }}</title>
+    {%- if item.type == "post" %}
+    <link href="{{ site.url }}{{ item.url }}"/>
+    <updated>{{ item.post.data.date | postUpdatedAt(item.post.data.updated) | dateToPacificRfc822 }}</updated>
+    <id>{{ site.url }}{{ item.url }}</id>
     <content type="html">
-      <![CDATA[{{ post.templateContent | htmlToAbsoluteUrls(site.url) }}]]>
+      <![CDATA[{{ item.post.templateContent | htmlToAbsoluteUrls(site.url) }}]]>
     </content>
-    {%- if post.data.description %}
-    <summary>{{ post.data.description | escape }}</summary>
+    {%- else %}
+    <link href="{{ item.url }}"/>
+    <updated>{{ item.date | dateToPacificRfc822 }}</updated>
+    <id>{{ item.url }}</id>
+    <category term="substack"/>
+    <content type="html">
+      <![CDATA[<p>{{ item.description | escape }}</p><p><a href="{{ item.url }}">Read on Substack &rarr;</a></p>]]>
+    </content>
+    {%- endif %}
+    {%- if item.description %}
+    <summary>{{ item.description | escape }}</summary>
     {%- endif %}
   </entry>
   {%- endfor %}

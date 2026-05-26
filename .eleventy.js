@@ -96,6 +96,30 @@ module.exports = function(eleventyConfig) {
     );
   });
 
+  // Merge native posts with Substack entries (from _data/substack.json) into a
+  // single chronological feed used by the home page and the RSS feed.
+  // Each item carries a `type` discriminator so templates can branch rendering.
+  eleventyConfig.addFilter("combinedFeed", function(posts, substack) {
+    const postItems = (posts || []).map((p) => ({
+      type: "post",
+      date: p.date,
+      url: p.url,
+      title: p.data.title,
+      description: p.data.description,
+      post: p
+    }));
+    const substackItems = (substack || []).map((s) => ({
+      type: "substack",
+      date: dateOnlyAtNoonUtc(s.date),
+      url: s.url,
+      title: s.title,
+      description: s.description
+    }));
+    return [...postItems, ...substackItems].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+  });
+
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("_posts/**/*.md")
       .sort((a, b) => new Date(b.date) - new Date(a.date));

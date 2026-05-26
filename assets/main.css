@@ -485,6 +485,28 @@ figcaption {
   vertical-align: middle;
 }
 
+.substack-badge {
+  display: inline-block;
+  margin-left: var(--spacing-xs);
+  padding: 0.1em 0.45em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  color: #c2410c;
+  background-color: rgba(255, 103, 25, 0.1);
+  border: 1px solid rgba(255, 103, 25, 0.35);
+  vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+  .substack-badge {
+    color: #fdba74;
+    background-color: rgba(255, 103, 25, 0.15);
+    border-color: rgba(255, 103, 25, 0.45);
+  }
+}
+
 .post-link {
   font-size: 1.5rem;
   font-weight: 600;
