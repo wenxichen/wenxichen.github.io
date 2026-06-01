@@ -84,6 +84,10 @@ module.exports = function(eleventyConfig) {
     return String(value).toUpperCase();
   });
 
+  eleventyConfig.addFilter("tagSlug", function(value) {
+    return String(value).trim().toLowerCase().replace(/\s+/g, "-");
+  });
+
   eleventyConfig.addFilter("findTranslation", function(posts, translationKey, lang) {
     if (!translationKey || !posts) return null;
     const currentLang = lang || "en";
@@ -106,6 +110,7 @@ module.exports = function(eleventyConfig) {
       url: p.url,
       title: p.data.title,
       description: p.data.description,
+      tags: p.data.tags || [],
       post: p
     }));
     const substackItems = (substack || []).map((s) => ({
@@ -113,7 +118,8 @@ module.exports = function(eleventyConfig) {
       date: dateOnlyAtNoonUtc(s.date),
       url: s.url,
       title: s.title,
-      description: s.description
+      description: s.description,
+      tags: s.tags || []
     }));
     return [...postItems, ...substackItems].sort(
       (a, b) => new Date(b.date) - new Date(a.date)

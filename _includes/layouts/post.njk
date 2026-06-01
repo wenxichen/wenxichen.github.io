@@ -40,6 +40,13 @@ layout: base.njk
         {% if partner.data.lang == 'zh' %}Switch to Chinese translation{% else %}Switch to English translation{% endif %}
       </button>
       {%- endif %}
+      {%- if tags and tags.length %}
+      <span class="post-tags">
+        {%- for tag in tags %}
+        <span class="tag-badge tag-{{ tag | tagSlug }}">{{ tag }}</span>
+        {%- endfor %}
+      </span>
+      {%- endif %}
     </p>
   </header>
 

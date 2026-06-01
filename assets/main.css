@@ -499,11 +499,55 @@ figcaption {
   vertical-align: middle;
 }
 
+.post-tags {
+  display: inline;
+  margin-left: var(--spacing-xs);
+}
+
+.tag-badge {
+  display: inline-block;
+  margin-left: 0.25em;
+  padding: 0.1em 0.45em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.tag-badge:first-child {
+  margin-left: 0;
+}
+
+.tag-ai {
+  color: var(--color-primary-dark);
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+}
+
+.tag-mindfulness {
+  color: #047857;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
 @media (prefers-color-scheme: dark) {
   .substack-badge {
     color: #fdba74;
     background-color: rgba(255, 103, 25, 0.15);
     border-color: rgba(255, 103, 25, 0.45);
+  }
+
+  .tag-ai {
+    color: #93c5fd;
+    background-color: rgba(37, 99, 235, 0.2);
+    border-color: rgba(96, 165, 250, 0.45);
+  }
+
+  .tag-mindfulness {
+    color: #6ee7b7;
+    background-color: rgba(16, 185, 129, 0.18);
+    border-color: rgba(52, 211, 153, 0.45);
   }
 }
 

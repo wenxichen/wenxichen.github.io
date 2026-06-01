@@ -6,6 +6,7 @@ layout: post.njk
 permalink: /posts/2025/11/08/exploring-ai-practice-theory.html
 description: "探索AI实践论 - 关于人工智能实践方法的思考"
 lang: zh
+tags: [AI]
 translation_key: exploring-ai-practice-theory
 original: true
 ---

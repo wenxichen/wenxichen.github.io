@@ -25,6 +25,13 @@ description: "A site for my technical thoughts and ideas evolved around AI techn
         {%- elif item.type == "substack" %}
           <span class="substack-badge" title="Published on Substack">Substack</span>
         {%- endif %}
+        {%- if item.tags and item.tags.length %}
+        <span class="post-tags">
+          {%- for tag in item.tags %}
+          <span class="tag-badge tag-{{ tag | tagSlug }}">{{ tag }}</span>
+          {%- endfor %}
+        </span>
+        {%- endif %}
       </span>
       <h2>
         {%- if item.type == "substack" %}

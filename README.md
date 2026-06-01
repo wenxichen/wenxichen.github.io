@@ -50,6 +50,22 @@ Your post content here in Markdown format...
 
 Optional `updated` is the last revised date. When it differs from `date`, the post page and homepage show both published and updated dates.
 
+### Tags
+
+Add a `tags` array to show topic badges on the home page and on each post page. Supported values: `AI`, `mindfulness`.
+
+```markdown
+---
+title: "Your Post Title"
+date: 2024-01-01
+layout: post.njk
+permalink: /your-post-url.html
+tags: [AI]
+---
+```
+
+Posts can have multiple tags: `tags: [AI, mindfulness]`. Omit `tags` to show no badges.
+
 ### Disabling comments on a post
 
 Comments (powered by [giscus](https://giscus.app), backed by GitHub Discussions) are enabled by default on every post. To turn them off for a specific post, add `comments: false` to its front matter:
@@ -122,7 +138,8 @@ To add a new Substack post, prepend an entry to
   "title": "Post title as it appears on Substack",
   "url": "https://wenxichen.substack.com/p/post-slug",
   "date": "YYYY-MM-DD",
-  "description": "Short summary used as feed <summary>."
+  "description": "Short summary used as feed <summary>.",
+  "tags": ["AI"]
 }
 ```
 
@@ -147,6 +164,7 @@ The merge + sort happens in the `combinedFeed` Nunjucks filter in
 - ✅ Modern static site generator (11ty)
 - ✅ Markdown-based posts
 - ✅ Bilingual posts (English / 中文) with inline toggle on the same page
+- ✅ Topic tags (`AI`, `mindfulness`) on the home page and post pages
 - ✅ Comments via [giscus](https://giscus.app) (GitHub Discussions)
 - ✅ Responsive design
 - ✅ Dark mode support

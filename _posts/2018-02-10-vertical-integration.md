@@ -5,6 +5,7 @@ layout: post.njk
 permalink: /inspirations/2018/02/10/vertical-integration.html
 description: "Imagine taking an airplane, one would not need to know how to build it before sitting comfortable in it. Similarly, a pilot need not to know how each part of..."
 lang: en
+tags: [AI]
 translation_key: vertical-integration
 original: true
 ---

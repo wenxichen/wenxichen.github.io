@@ -6,6 +6,7 @@ layout: post.njk
 permalink: /posts/2026/05/31/turn-inward-and-sense-your-body.html
 description: "内视自己的身体 - 关于如何感知自己的身体"
 lang: zh
+tags: [mindfulness]
 translation_key: turn-inward-and-sense-your-body
 original: true
 ---
